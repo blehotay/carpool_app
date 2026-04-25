@@ -33,4 +33,6 @@ abstract class CarpoolRepository {
   Future<Carpool> getCarpool({
     required String carpoolId,
   });
+
+  Future<List<Carpool>> getUserCarpools();
 }

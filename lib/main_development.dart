@@ -13,7 +13,8 @@ Future<void> main() async {
   // );
 
   // For development, use mock implementations
-  final authenticationClient = FirebaseAuthenticationClient();
+  // Switch to FirebaseAuthenticationClient when Firebase is configured
+  final authenticationClient = MockAuthenticationClient();
   final carpoolRepository = MockCarpoolRepository();
 
   await bootstrap(

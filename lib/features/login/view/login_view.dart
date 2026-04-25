@@ -1,5 +1,6 @@
 import 'package:app_ui/app_ui.dart';
 import 'package:carpool_app/features/login/bloc/login_bloc.dart';
+import 'package:carpool_app/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -17,7 +18,7 @@ class LoginView extends StatelessWidget {
               ..hideCurrentSnackBar()
               ..showSnackBar(
                 SnackBar(
-                  content: Text(state.errorMessage ?? 'Login failed'),
+                  content: Text(state.errorMessage ?? context.l10n.loginFailed),
                 ),
               );
           }
@@ -36,7 +37,7 @@ class LoginView extends StatelessWidget {
                 ),
                 const SizedBox(height: AppSpacing.xlg),
                 Text(
-                  'Welcome Back',
+                  context.l10n.welcomeBack,
                   style: Theme.of(context).textTheme.headlineMedium,
                   textAlign: TextAlign.center,
                 ),
@@ -69,11 +70,11 @@ class _EmailInput extends StatelessWidget {
           onChanged: (email) =>
               context.read<LoginBloc>().add(LoginEmailChanged(email)),
           keyboardType: TextInputType.emailAddress,
-          decoration: const InputDecoration(
-            labelText: 'Email',
-            hintText: 'your@email.com',
-            border: OutlineInputBorder(),
-            prefixIcon: Icon(Icons.email),
+          decoration: InputDecoration(
+            labelText: context.l10n.email,
+            hintText: context.l10n.emailHint,
+            border: const OutlineInputBorder(),
+            prefixIcon: const Icon(Icons.email),
           ),
         );
       },
@@ -93,10 +94,10 @@ class _PasswordInput extends StatelessWidget {
           onChanged: (password) =>
               context.read<LoginBloc>().add(LoginPasswordChanged(password)),
           obscureText: true,
-          decoration: const InputDecoration(
-            labelText: 'Password',
-            border: OutlineInputBorder(),
-            prefixIcon: Icon(Icons.lock),
+          decoration: InputDecoration(
+            labelText: context.l10n.password,
+            border: const OutlineInputBorder(),
+            prefixIcon: const Icon(Icons.lock),
           ),
         );
       },
@@ -125,7 +126,7 @@ class _LoginButton extends StatelessWidget {
                   width: 20,
                   child: CircularProgressIndicator(strokeWidth: 2),
                 )
-              : const Text('Sign In'),
+              : Text(context.l10n.signIn),
         );
       },
     );
@@ -139,7 +140,7 @@ class _SignUpButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () => context.go('/signup'),
-      child: const Text("Don't have an account? Sign up"),
+      child: Text(context.l10n.dontHaveAccount),
     );
   }
 }

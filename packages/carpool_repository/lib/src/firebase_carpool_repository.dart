@@ -178,4 +178,12 @@ class FirebaseCarpoolRepository implements CarpoolRepository {
       pickupTime: dto.pickupTime,
     );
   }
+
+  @override
+  Future<List<Carpool>> getUserCarpools() async {
+    // TODO: Implement Firebase query to get user's carpools
+    // Query carpools collection where memberIds array contains current user ID
+    throw UnimplementedError(
+        'getUserCarpools not yet implemented for Firebase');
+  }
 }

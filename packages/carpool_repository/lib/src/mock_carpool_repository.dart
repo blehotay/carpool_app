@@ -8,7 +8,7 @@ class MockCarpoolRepository implements CarpoolRepository {
     required DateTime weekStart,
   }) async {
     await Future<void>.delayed(const Duration(milliseconds: 500));
-    
+
     final monday = weekStart;
     return CarpoolWeek(
       carpoolId: carpoolId,
@@ -140,5 +140,26 @@ class MockCarpoolRepository implements CarpoolRepository {
       memberIds: ['user1', 'user2', 'user3', 'user4'],
       pickupTime: '3:30 PM',
     );
+  }
+
+  @override
+  Future<List<Carpool>> getUserCarpools() async {
+    await Future<void>.delayed(const Duration(milliseconds: 500));
+    return const [
+      Carpool(
+        id: 'carpool1',
+        name: 'Soccer Practice',
+        location: 'Riverside Soccer Fields',
+        memberIds: ['user1', 'user2', 'user3', 'user4'],
+        pickupTime: '3:30 PM',
+      ),
+      Carpool(
+        id: 'carpool2',
+        name: 'School Pickup',
+        location: 'Lincoln Elementary',
+        memberIds: ['user1', 'user5', 'user6'],
+        pickupTime: '2:45 PM',
+      ),
+    ];
   }
 }
