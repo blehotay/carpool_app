@@ -1,12 +1,29 @@
+import 'package:authentication_client/authentication_client.dart';
 import 'package:carpool_app/app/app.dart';
-import 'package:carpool_app/counter/counter.dart';
+import 'package:carpool_repository/carpool_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('App', () {
-    testWidgets('renders CounterPage', (tester) async {
-      await tester.pumpWidget(const App());
-      expect(find.byType(CounterPage), findsOneWidget);
+    late AuthenticationClient authenticationClient;
+    late CarpoolRepository carpoolRepository;
+
+    setUp(() {
+      authenticationClient = MockAuthenticationClient();
+      carpoolRepository = MockCarpoolRepository();
+    });
+
+    testWidgets('renders app with router', (tester) async {
+      await tester.pumpWidget(
+        App(
+          authenticationClient: authenticationClient,
+          carpoolRepository: carpoolRepository,
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      // App should render without errors
+      expect(find.byType(App), findsOneWidget);
     });
   });
 }

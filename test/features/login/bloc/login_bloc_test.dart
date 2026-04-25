@@ -117,7 +117,7 @@ void main() {
         build: () => LoginBloc(authenticationClient: authenticationClient),
         seed: () => const LoginState(email: '', password: ''),
         act: (bloc) => bloc.add(const LoginSubmitted()),
-        expect: () => [],
+        expect: () => <LoginState>[],
       );
     });
   });
