@@ -3,14 +3,22 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'carpool_day.freezed.dart';
 part 'carpool_day.g.dart';
 
+/// Status of a carpool day.
 enum DayStatus {
+  /// Driver has been assigned.
   assigned,
+
+  /// Day needs a driver.
   needsDriver,
+
+  /// Day has been cancelled.
   cancelled,
 }
 
+/// Domain model representing a single day in a carpool week.
 @freezed
 class CarpoolDay with _$CarpoolDay {
+  /// Creates a [CarpoolDay].
   const factory CarpoolDay({
     required String id,
     required DateTime date,

@@ -4,8 +4,10 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'carpool_week.freezed.dart';
 part 'carpool_week.g.dart';
 
+/// Domain model representing a week of carpool schedules.
 @freezed
 class CarpoolWeek with _$CarpoolWeek {
+  /// Creates a [CarpoolWeek].
   const factory CarpoolWeek({
     required String carpoolId,
     required DateTime weekStart,
@@ -22,7 +24,7 @@ class CarpoolWeek with _$CarpoolWeek {
   String get weekLabel {
     final startMonth = _monthName(weekStart.month);
     final endMonth = _monthName(weekEnd.month);
-    
+
     if (weekStart.month == weekEnd.month) {
       return '$startMonth ${weekStart.day}-${weekEnd.day}';
     } else {
@@ -45,8 +47,7 @@ class CarpoolWeek with _$CarpoolWeek {
   CarpoolDay? getNextDrivingDay(String userId, DateTime currentDate) {
     final userDays = getDaysForDriver(userId);
     for (final day in userDays) {
-      if (day.date.isAfter(currentDate) || 
-          _isSameDay(day.date, currentDate)) {
+      if (day.date.isAfter(currentDate) || _isSameDay(day.date, currentDate)) {
         return day;
       }
     }

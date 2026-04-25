@@ -3,8 +3,10 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'carpool_member.freezed.dart';
 part 'carpool_member.g.dart';
 
+/// Domain model representing a carpool member.
 @freezed
 class CarpoolMember with _$CarpoolMember {
+  /// Creates a [CarpoolMember].
   const factory CarpoolMember({
     required String id,
     required String name,

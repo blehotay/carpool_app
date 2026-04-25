@@ -3,8 +3,13 @@ import 'dart:async';
 import 'package:authentication_client/src/authentication_client.dart';
 import 'package:authentication_client/src/models/auth_user.dart';
 
+/// Mock implementation of [AuthenticationClient] for testing and development.
+///
+/// Accepts any email/password combination and simulates network delays.
 class MockAuthenticationClient implements AuthenticationClient {
-  MockAuthenticationClient() : _controller = StreamController<AuthUser?>.broadcast() {
+  /// Creates a [MockAuthenticationClient].
+  MockAuthenticationClient()
+      : _controller = StreamController<AuthUser?>.broadcast() {
     // Start with no user (unauthenticated)
     _controller.add(null);
   }
@@ -59,6 +64,7 @@ class MockAuthenticationClient implements AuthenticationClient {
     _controller.add(null);
   }
 
+  /// Disposes of the stream controller.
   void dispose() {
     _controller.close();
   }
