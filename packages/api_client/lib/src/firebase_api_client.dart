@@ -2,7 +2,13 @@ import 'package:api_client/src/api_client.dart';
 import 'package:api_client/src/models/models.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+/// Firebase implementation of [ApiClient].
+///
+/// Uses Cloud Firestore for data persistence.
 class FirebaseApiClient implements ApiClient {
+  /// Creates a [FirebaseApiClient].
+  ///
+  /// Optionally accepts a [FirebaseFirestore] instance for testing.
   FirebaseApiClient({
     FirebaseFirestore? firestore,
   }) : _firestore = firestore ?? FirebaseFirestore.instance;

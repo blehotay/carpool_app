@@ -17,7 +17,7 @@ class DashboardView extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.logout),
             onPressed: () {
-              // TODO: Implement logout
+              // TODO(dev): Implement logout
             },
           ),
         ],

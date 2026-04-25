@@ -7,12 +7,12 @@ import 'package:flutter/widgets.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // TODO: Initialize Firebase for production
+  // TODO(dev): Initialize Firebase for production
   // await Firebase.initializeApp(
   //   options: DefaultFirebaseOptions.currentPlatform,
   // );
 
-  // TODO: Switch to Firebase implementations for production
+  // TODO(dev): Switch to Firebase implementations for production
   final authenticationClient = MockAuthenticationClient();
   final carpoolRepository = MockCarpoolRepository();
 
