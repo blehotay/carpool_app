@@ -2,7 +2,9 @@ import 'package:api_client/api_client.dart';
 import 'package:carpool_repository/src/carpool_repository.dart';
 import 'package:carpool_repository/src/models/models.dart';
 
+/// Firebase implementation of [CarpoolRepository].
 class FirebaseCarpoolRepository implements CarpoolRepository {
+  /// Creates a [FirebaseCarpoolRepository].
   FirebaseCarpoolRepository({
     required ApiClient apiClient,
   }) : _apiClient = apiClient;
@@ -128,7 +130,7 @@ class FirebaseCarpoolRepository implements CarpoolRepository {
       id: day.id,
       date: day.date,
       driverId: day.driverId,
-      childrenIds: [],
+      childrenIds: const [],
       status: _mapDayStatusToString(day.status),
     );
   }
@@ -181,9 +183,10 @@ class FirebaseCarpoolRepository implements CarpoolRepository {
 
   @override
   Future<List<Carpool>> getUserCarpools() async {
-    // TODO: Implement Firebase query to get user's carpools
+    // TODO(dev): Implement Firebase query to get user's carpools
     // Query carpools collection where memberIds array contains current user ID
     throw UnimplementedError(
-        'getUserCarpools not yet implemented for Firebase');
+      'getUserCarpools not yet implemented for Firebase',
+    );
   }
 }

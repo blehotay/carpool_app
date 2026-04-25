@@ -16,11 +16,14 @@ class CarpoolWeek with _$CarpoolWeek {
 
   const CarpoolWeek._();
 
+  /// Creates a [CarpoolWeek] from JSON.
   factory CarpoolWeek.fromJson(Map<String, dynamic> json) =>
       _$CarpoolWeekFromJson(json);
 
+  /// End date of the week (Sunday).
   DateTime get weekEnd => weekStart.add(const Duration(days: 6));
 
+  /// Formatted week label (e.g., 'Jan 1-7').
   String get weekLabel {
     final startMonth = _monthName(weekStart.month);
     final endMonth = _monthName(weekEnd.month);
@@ -32,6 +35,7 @@ class CarpoolWeek with _$CarpoolWeek {
     }
   }
 
+  /// Gets a specific day by ID.
   CarpoolDay? getDayById(String dayId) {
     try {
       return days.firstWhere((day) => day.id == dayId);
@@ -40,10 +44,12 @@ class CarpoolWeek with _$CarpoolWeek {
     }
   }
 
+  /// Gets all days assigned to a specific driver.
   List<CarpoolDay> getDaysForDriver(String driverId) {
     return days.where((day) => day.driverId == driverId).toList();
   }
 
+  /// Gets the next driving day for a user after the current date.
   CarpoolDay? getNextDrivingDay(String userId, DateTime currentDate) {
     final userDays = getDaysForDriver(userId);
     for (final day in userDays) {
@@ -54,6 +60,7 @@ class CarpoolWeek with _$CarpoolWeek {
     return null;
   }
 
+  /// Checks if a user is driving today.
   bool isUserDrivingToday(String userId, DateTime today) {
     final userDays = getDaysForDriver(userId);
     return userDays.any((day) => _isSameDay(day.date, today));

@@ -30,11 +30,14 @@ class CarpoolDay with _$CarpoolDay {
 
   const CarpoolDay._();
 
+  /// Creates a [CarpoolDay] from JSON.
   factory CarpoolDay.fromJson(Map<String, dynamic> json) =>
       _$CarpoolDayFromJson(json);
 
+  /// Whether this day has an assigned driver.
   bool get hasDriver => driverId != null && driverId!.isNotEmpty;
 
+  /// Short day label (e.g., 'Mon', 'Tue').
   String get dayLabel {
     final weekday = date.weekday;
     switch (weekday) {
@@ -57,6 +60,7 @@ class CarpoolDay with _$CarpoolDay {
     }
   }
 
+  /// Date label showing day of month.
   String get dateLabel {
     return '${date.day}';
   }

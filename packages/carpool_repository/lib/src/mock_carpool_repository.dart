@@ -1,6 +1,7 @@
 import 'package:carpool_repository/src/carpool_repository.dart';
 import 'package:carpool_repository/src/models/models.dart';
 
+/// Mock implementation of [CarpoolRepository] for testing and development.
 class MockCarpoolRepository implements CarpoolRepository {
   @override
   Future<CarpoolWeek> getWeekSchedule({

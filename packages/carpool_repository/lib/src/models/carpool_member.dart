@@ -14,6 +14,7 @@ class CarpoolMember with _$CarpoolMember {
     required List<String> childrenNames,
   }) = _CarpoolMember;
 
+  /// Creates a [CarpoolMember] from JSON.
   factory CarpoolMember.fromJson(Map<String, dynamic> json) =>
       _$CarpoolMemberFromJson(json);
 }
