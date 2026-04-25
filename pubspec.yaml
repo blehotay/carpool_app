@@ -7,10 +7,38 @@ environment:
   sdk: ^3.5.0
 
 dependencies:
+  # Local packages
+  api_client:
+    path: packages/api_client
+  app_ui:
+    path: packages/app_ui
+  authentication_client:
+    path: packages/authentication_client
+  carpool_repository:
+    path: packages/carpool_repository
+  
+  # State management
   bloc: ^8.1.4
+  equatable: ^2.0.5
+  flutter_bloc: ^8.1.6
+  
+  # Firebase
+  cloud_firestore: ^5.0.0
+  firebase_auth: ^5.0.0
+  firebase_core: ^3.0.0
+  firebase_dynamic_links: ^6.0.0
+  
+  # Navigation
+  go_router: ^14.0.0
+  
+  # Sharing & Contacts
+  contacts_service: ^0.6.3
+  permission_handler: ^11.0.0
+  share_plus: ^10.0.0
+  
+  # Flutter
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.1.6
   flutter_localizations:
     sdk: flutter
   intl: ^0.19.0
