@@ -45,6 +45,8 @@
     "dartdoc",
     "pubspec",
     "equatable",
-    "immutability"
+    "immutability",
+    "benlehotay",
+    "carpoolapp"
   ]
 }
