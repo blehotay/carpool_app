@@ -123,7 +123,8 @@ class FirebaseApiClient implements ApiClient {
   }
 
   String _getWeekId(DateTime weekStart) {
-    return '${weekStart.year}-W${_getWeekNumber(weekStart).toString().padLeft(2, '0')}';
+    final weekNumber = _getWeekNumber(weekStart).toString().padLeft(2, '0');
+    return '${weekStart.year}-W$weekNumber';
   }
 
   int _getWeekNumber(DateTime date) {

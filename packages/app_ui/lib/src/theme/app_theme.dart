@@ -11,12 +11,8 @@ abstract class AppTheme {
       colorScheme: const ColorScheme.light(
         primary: AppColors.primary,
         secondary: AppColors.secondary,
-        surface: AppColors.surface,
         error: AppColors.error,
-        onPrimary: AppColors.onPrimary,
         onSecondary: AppColors.onSecondary,
-        onSurface: AppColors.onSurface,
-        onError: AppColors.onError,
       ),
       scaffoldBackgroundColor: AppColors.background,
       textTheme: const TextTheme(

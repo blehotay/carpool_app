@@ -35,6 +35,8 @@
     "l10n",
     "Windsurf",
     "dtos",
-    "needsdriver"
+    "needsdriver",
+    "mocktail",
+    "firestore"
   ]
 }

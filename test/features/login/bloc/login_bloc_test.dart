@@ -115,7 +115,7 @@ void main() {
       blocTest<LoginBloc, LoginState>(
         'does nothing when email or password is empty',
         build: () => LoginBloc(authenticationClient: authenticationClient),
-        seed: () => const LoginState(email: '', password: ''),
+        seed: () => const LoginState(),
         act: (bloc) => bloc.add(const LoginSubmitted()),
         expect: () => <LoginState>[],
       );

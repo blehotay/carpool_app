@@ -15,6 +15,7 @@ class Carpool with _$Carpool {
     required String pickupTime,
   }) = _Carpool;
 
+  /// Creates a [Carpool] from JSON.
   factory Carpool.fromJson(Map<String, dynamic> json) =>
       _$CarpoolFromJson(json);
 }

@@ -13,6 +13,7 @@ class UserPreferences with _$UserPreferences {
     required List<int> preferredDays,
   }) = _UserPreferences;
 
+  /// Creates [UserPreferences] from JSON.
   factory UserPreferences.fromJson(Map<String, dynamic> json) =>
       _$UserPreferencesFromJson(json);
 }
