@@ -27,6 +27,7 @@
     "carpools",
     "carpool",
     "Firestore",
+    "firestore",
     "signin",
     "signup",
     "Cubit",
@@ -37,6 +38,13 @@
     "dtos",
     "needsdriver",
     "mocktail",
-    "firestore"
+    "bloc",
+    "blocs",
+    "gorouter",
+    "unauth",
+    "dartdoc",
+    "pubspec",
+    "equatable",
+    "immutability"
   ]
 }
