@@ -29,7 +29,12 @@ jobs:
           flutter pub global activate very_good_cli
           very_good packages get --recursive
       - name: Generate L10n
-        run: flutter gen-l10n
+        run: |
+          pwd
+          ls -la l10n.yaml || echo "l10n.yaml not found"
+          flutter pub get
+          flutter gen-l10n
+          ls -la .dart_tool/flutter_gen/gen_l10n/ || echo "Generated files not found"
       - name: Format
         run: dart format --set-exit-if-changed .
       - name: Analyze
