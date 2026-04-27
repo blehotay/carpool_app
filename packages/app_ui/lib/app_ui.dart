@@ -1,5 +1,3 @@
-library app_ui;
-
 export 'src/colors/app_colors.dart';
 export 'src/components/components.dart';
 export 'src/spacing/app_spacing.dart';

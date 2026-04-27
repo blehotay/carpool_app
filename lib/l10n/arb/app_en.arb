@@ -1,7 +1,117 @@
 {
     "@@locale": "en",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
-        "description": "Text shown in the AppBar of the Counter Page"
+    "appTitle": "Carpool",
+    "@appTitle": {
+        "description": "Application title"
+    },
+    "welcomeBack": "Welcome Back",
+    "@welcomeBack": {
+        "description": "Login screen welcome message"
+    },
+    "email": "Email",
+    "@email": {
+        "description": "Email input label"
+    },
+    "emailHint": "your@email.com",
+    "@emailHint": {
+        "description": "Email input hint"
+    },
+    "password": "Password",
+    "@password": {
+        "description": "Password input label"
+    },
+    "signIn": "Sign In",
+    "@signIn": {
+        "description": "Sign in button text"
+    },
+    "signOut": "Sign Out",
+    "@signOut": {
+        "description": "Sign out button text"
+    },
+    "dontHaveAccount": "Don't have an account? Sign up",
+    "@dontHaveAccount": {
+        "description": "Sign up prompt on login screen"
+    },
+    "createAccount": "Create Account",
+    "@createAccount": {
+        "description": "Sign up screen title and button"
+    },
+    "alreadyHaveAccount": "Already have an account? Sign in",
+    "@alreadyHaveAccount": {
+        "description": "Sign in prompt on sign up screen"
+    },
+    "name": "Name",
+    "@name": {
+        "description": "Name input label"
+    },
+    "myCarpools": "My Carpools",
+    "@myCarpools": {
+        "description": "Dashboard title"
+    },
+    "noCarpoolsYet": "No Carpools Yet",
+    "@noCarpoolsYet": {
+        "description": "Empty state title"
+    },
+    "createCarpoolPrompt": "Create a carpool to get started",
+    "@createCarpoolPrompt": {
+        "description": "Empty state message"
+    },
+    "createCarpool": "Create Carpool",
+    "@createCarpool": {
+        "description": "Create carpool button"
+    },
+    "members": "{count, plural, =0{No members} =1{1 member} other{{count} members}}",
+    "@members": {
+        "description": "Member count",
+        "placeholders": {
+            "count": {
+                "type": "int"
+            }
+        }
+    },
+    "retry": "Retry",
+    "@retry": {
+        "description": "Retry button"
+    },
+    "failedToLoadCarpools": "Failed to load carpools",
+    "@failedToLoadCarpools": {
+        "description": "Error message when carpools fail to load"
+    },
+    "loginFailed": "Login failed",
+    "@loginFailed": {
+        "description": "Login error message"
+    },
+    "profile": "Profile",
+    "@profile": {
+        "description": "Profile screen title"
+    },
+    "home": "Home",
+    "@home": {
+        "description": "Home navigation label"
+    },
+    "carpools": "Carpools",
+    "@carpools": {
+        "description": "Carpools navigation label"
+    },
+    "carpoolDetails": "Carpool Details",
+    "@carpoolDetails": {
+        "description": "Carpool detail screen title"
+    },
+    "weeklyCarpoolBoard": "Weekly Carpool Board",
+    "@weeklyCarpoolBoard": {
+        "description": "Weekly carpool board title"
+    },
+    "comingInPhase4": "Coming in Phase 4!",
+    "@comingInPhase4": {
+        "description": "Placeholder message for unimplemented features"
+    },
+    "carpoolId": "Carpool ID: {id}",
+    "@carpoolId": {
+        "description": "Carpool ID display",
+        "placeholders": {
+            "id": {
+                "type": "String"
+            }
+        }
     }
 }

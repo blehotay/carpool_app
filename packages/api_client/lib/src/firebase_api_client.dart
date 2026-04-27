@@ -2,7 +2,13 @@ import 'package:api_client/src/api_client.dart';
 import 'package:api_client/src/models/models.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+/// Firebase implementation of [ApiClient].
+///
+/// Uses Cloud Firestore for data persistence.
 class FirebaseApiClient implements ApiClient {
+  /// Creates a [FirebaseApiClient].
+  ///
+  /// Optionally accepts a [FirebaseFirestore] instance for testing.
   FirebaseApiClient({
     FirebaseFirestore? firestore,
   }) : _firestore = firestore ?? FirebaseFirestore.instance;
@@ -117,7 +123,8 @@ class FirebaseApiClient implements ApiClient {
   }
 
   String _getWeekId(DateTime weekStart) {
-    return '${weekStart.year}-W${_getWeekNumber(weekStart).toString().padLeft(2, '0')}';
+    final weekNumber = _getWeekNumber(weekStart).toString().padLeft(2, '0');
+    return '${weekStart.year}-W$weekNumber';
   }
 
   int _getWeekNumber(DateTime date) {
