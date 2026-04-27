@@ -21,6 +21,7 @@ jobs:
     with:
       flutter_channel: stable
       min_coverage: 80
+      analyze_directories: "lib"
 
   spell-check:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/spell_check.yml@v1
